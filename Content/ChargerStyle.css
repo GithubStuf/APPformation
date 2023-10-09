@@ -1,0 +1,285 @@
+﻿.container {
+    max-height: 100%;
+    height: 100%;
+    background-color: #cbcbcbf0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    display: grid;
+    grid: "infos form" 100% / 1.2fr 1fr;
+    grid-auto-flow: row dense;
+}
+
+.container2 {
+    max-height: 100%;
+    height: 100%;
+    background-color: #cbcbcbf0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    display: grid;
+    grid: "BesoinForm" 100% / 100%;
+    grid-auto-flow: row dense;
+}
+
+.infos, .form {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+}
+
+.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8 {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid: "headers" 10% "labels" 100% / 100%;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.buttons {
+    align-items: end;
+}
+
+.infos {
+    display: grid;
+    grid: "div1" 10% "div2" 10% "div3" 10% "div4" 10% "div5" 10% "div6" 20% "div7" 10% "div8" 10% "buttons" 10% / 100%;
+    grid-auto-flow: column;
+    border: 1px solid darkblue;
+}
+
+.form {
+    border: 1px solid darkblue;
+}
+
+.textbox {
+    width: 90%;
+    height: 50%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.label {
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.valider {
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    background-color: darkblue;
+    color: white;
+    font-size: 25px;
+    border-radius: 15px;
+}
+.Proglabel {
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    background: #eae9e9;
+    color: black;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    height: 60%;
+}
+
+.labels {
+    display: block;
+    margin-bottom: 5px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    background: #eae9e9;
+    color: black;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    height: 40%;
+}
+
+.headers {
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.duree {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+}
+
+#EnterDureeP {
+    flex: 9;
+}
+
+#Choose {
+    flex: 1;
+}
+
+.Count {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
+.buttons {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    --b: 3px;
+    --h: 2em;
+}
+
+    .buttons .button {
+        --_c: #0d0148;
+        flex: calc(1 + var(--_s,0));
+        min-width: 0;
+        font-size: 18px;
+        font-weight: bold;
+        height: var(--h);
+        cursor: pointer;
+        color: var(--_c);
+        border: var(--b) solid var(--_c);
+        background: conic-gradient(at calc(100% - 1.3*var(--b)) 0,var(--_c) 209deg, #0000 211deg) border-box;
+        clip-path: polygon(0 0,100% 0,calc(100% - 0.577*var(--h)) 100%,0 100%);
+        padding: 0 calc(0.288*var(--h)) 0 0;
+        margin: 0 calc(-0.288*var(--h)) 0 0;
+        box-sizing: border-box;
+        transition: flex .4s;
+    }
+
+        .buttons .button + .button {
+            --_c: #FF003C;
+            flex: calc(.75 + var(--_s,0));
+            background: conic-gradient(from -90deg at calc(1.3*var(--b)) 100%,var(--_c) 119deg, #0000 121deg) border-box;
+            clip-path: polygon(calc(0.577*var(--h)) 0,100% 0,100% 100%,0 100%);
+            margin: 0 0 0 calc(-0.288*var(--h));
+            padding: 0 0 0 calc(0.288*var(--h));
+        }
+
+        .buttons .button:focus-visible {
+            outline-offset: calc(-2*var(--b));
+            outline: calc(var(--b)/2) solid #000;
+            background: none;
+            clip-path: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            .buttons .button:focus-visible + .button {
+                background: none;
+                clip-path: none;
+                margin: 0;
+                padding: 0;
+            }
+
+        .buttons .button:has(+ button:focus-visible) {
+            background: none;
+            clip-path: none;
+            margin: 0;
+            padding: 0;
+        }
+
+.button:hover,
+.button:active:not(:focus-visible) {
+    --_s: .75;
+}
+
+.button:active {
+    box-shadow: inset 0 0 0 100vmax var(--_c);
+    color: #fff;
+}
+
+.button:disabled {
+    box-shadow: inset 0 0 0 100vmax var(--_c);
+    color: #fff;
+}
+.PopUpContainer2 {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 60% 10%;
+    grid-template-columns: 60%;
+    grid-auto-flow: column dense;
+    justify-content: center;
+    align-content: center;
+}
+
+.structures {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-content: space-evenly;
+    text-align: center;
+    background-color: #ed1b24;
+}
+
+.BtnSlt, .TextBox2, .TextBox3, .TextBox4, .TextBox5, .BtnBsn {
+    border: none;
+    border-radius: 5%;
+}
+
+    .BtnSlt:hover, .BtnBsn:hover {
+        border: 0.4px solid #141e46;
+        box-shadow: 0px 10px 30px 0px #c70039;
+    }
+.BesoinForm {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff5e0;
+    border-radius: 5%;
+    padding: 15px;
+    width: 120px;
+    width: 50%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 30px 0px #c70039;
+}
+
+    .BesoinForm table {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        border: 3px solid darkblue;
+    }
+
+.BtnSlt, .TextBox2, .TextBox3, .TextBox4, .TextBox5, .BtnBsn {
+    width: 80%;
+    height: 60%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.Label1, .Label2, .Label3, .Label4, .Label5 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.BtnBsn, .BtnSlt {
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: #0048ff;
+    color: white;
+}
+
+.BtnBsn {
+    width: 50%;
+}
+/*table td{
+            border-bottom:1px dashed #141e46;
+        }*/

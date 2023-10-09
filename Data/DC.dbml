@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_ENIEM" Class="DCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.Utilisateurs" Member="Utilisateurs">
+    <Type Name="Utilisateurs">
+      <Column Name="ID_user" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Pseudo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_EMP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Employes_Utilisateurs" Member="Employes" ThisKey="ID_EMP" OtherKey="ID_EMP" Type="Employes" IsForeignKey="true" />
+      <Association Name="Type_User_Utilisateurs" Member="Type_User" ThisKey="ID_Type" OtherKey="ID_Type" Type="Type_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ecarts" Member="Ecarts">
+    <Type Name="Ecarts">
+      <Column Name="ID_Ecart" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Explication" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Formation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Formation_Ecarts" Member="Formation" ThisKey="ID_Formation" OtherKey="ID_Formation" Type="Formation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employes" Member="Employes">
+    <Type Name="Employes">
+      <Column Name="ID_EMP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Prenom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fonction" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Date_N" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Date_Rec" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Diplome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GSP" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Structure" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Employes_Utilisateurs" Member="Utilisateurs" ThisKey="ID_EMP" OtherKey="ID_EMP" Type="Utilisateurs" />
+      <Association Name="Employes_Formateurs" Member="Formateurs" ThisKey="ID_EMP" OtherKey="ID_EMP" Type="Formateurs" />
+      <Association Name="Employes_Participants" Member="Participants" ThisKey="ID_EMP" OtherKey="ID_EMP" Type="Participants" />
+      <Association Name="Structures_Employes" Member="Structures" ThisKey="ID_Structure" OtherKey="ID_Structure" Type="Structures" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Evaluation_des_fournisseurs" Member="Evaluation_des_fournisseurs">
+    <Type Name="Evaluation_des_fournisseurs">
+      <Column Name="ID_Eval_Four" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Qualite_F" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Res_Delai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Offre_F" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Doc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Four" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Fournisseurs_Evaluation_des_fournisseurs" Member="Fournisseurs" ThisKey="ID_Four" OtherKey="ID_Four" Type="Fournisseurs" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Evaluations_a_chaud" Member="Evaluations_a_chaud">
+    <Type Name="Evaluations_a_chaud">
+      <Column Name="ID_Eval_chaud" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Q1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q3" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q4" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q5" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q6" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q7" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q8" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q9" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q10" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q11" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Remarque" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Formation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Eval_syn" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Formation_Evaluations_a_chaud" Member="Formation" ThisKey="ID_Formation" OtherKey="ID_Formation" Type="Formation" IsForeignKey="true" />
+      <Association Name="Synthese_evaluations_a_chaud_Evaluations_a_chaud" Member="Synthese_evaluations_a_chaud" ThisKey="ID_Eval_syn" OtherKey="ID_Eval_syn" Type="Synthese_evaluations_a_chaud" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Evaluations_a_froid" Member="Evaluations_a_froid">
+    <Type Name="Evaluations_a_froid">
+      <Column Name="ID_Eval_froid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Q1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q3" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q4" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q5" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Somme" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Remarque" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Formation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Formation_Evaluations_a_froid" Member="Formation" ThisKey="ID_Formation" OtherKey="ID_Formation" Type="Formation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Formateurs" Member="Formateurs">
+    <Type Name="Formateurs">
+      <Column Name="ID_Form" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Domaine" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_EMP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Formation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Employes_Formateurs" Member="Employes" ThisKey="ID_EMP" OtherKey="ID_EMP" Type="Employes" IsForeignKey="true" />
+      <Association Name="Formation_Formateurs" Member="Formation" ThisKey="ID_Formation" OtherKey="ID_Formation" Type="Formation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Formation" Member="Formation">
+    <Type Name="Formation">
+      <Column Name="ID_Formation" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Intitule_F" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Raison_F" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre_Agn" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Objectif_F" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Type_F" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Programme_F_Prop" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Duree_E" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lieu_D" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Fou" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="N_Action_F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Formation_Ecarts" Member="Ecarts" ThisKey="ID_Formation" OtherKey="ID_Formation" Type="Ecarts" />
+      <Association Name="Formation_Evaluations_a_chaud" Member="Evaluations_a_chaud" ThisKey="ID_Formation" OtherKey="ID_Formation" Type="Evaluations_a_chaud" />
+      <Association Name="Formation_Evaluations_a_froid" Member="Evaluations_a_froid" ThisKey="ID_Formation" OtherKey="ID_Formation" Type="Evaluations_a_froid" />
+      <Association Name="Formation_Formateurs" Member="Formateurs" ThisKey="ID_Formation" OtherKey="ID_Formation" Type="Formateurs" />
+      <Association Name="Formation_Participants" Member="Participants" ThisKey="ID_Formation" OtherKey="ID_Formation" Type="Participants" />
+      <Association Name="Fournisseurs_Formation" Member="Fournisseurs" ThisKey="ID_Fou" OtherKey="ID_Four" Type="Fournisseurs" IsForeignKey="true" />
+      <Association Name="Plan_de_formations_Formation" Member="Plan_de_formations" ThisKey="N_Action_F" OtherKey="N_Action_F" Type="Plan_de_formations" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Fournisseurs" Member="Fournisseurs">
+    <Type Name="Fournisseurs">
+      <Column Name="ID_Four" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Identification_F" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Statut_Jur" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Nationalite" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Siege_Social" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Adresse" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Ville" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Pays" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tel" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Personne_a_contacter" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Domiciliation_Bancaire" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Missions" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Fournisseurs_Evaluation_des_fournisseurs" Member="Evaluation_des_fournisseurs" ThisKey="ID_Four" OtherKey="ID_Four" Type="Evaluation_des_fournisseurs" />
+      <Association Name="Fournisseurs_Formation" Member="Formation" ThisKey="ID_Four" OtherKey="ID_Fou" Type="Formation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Participants" Member="Participants">
+    <Type Name="Participants">
+      <Column Name="ID_Par" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_EMP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Formation" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Employes_Participants" Member="Employes" ThisKey="ID_EMP" OtherKey="ID_EMP" Type="Employes" IsForeignKey="true" />
+      <Association Name="Formation_Participants" Member="Formation" ThisKey="ID_Formation" OtherKey="ID_Formation" Type="Formation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Plan_de_formations" Member="Plan_de_formations">
+    <Type Name="Plan_de_formations">
+      <Column Name="N_Action_F" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Duree_Prev" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date_Prev" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Budget" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Cout_H" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Plan_de_formations_Formation" Member="Formation" ThisKey="N_Action_F" OtherKey="N_Action_F" Type="Formation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Structures" Member="Structures">
+    <Type Name="Structures">
+      <Column Name="ID_Structure" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom_Structure" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Quota_Actions" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Structures_Employes" Member="Employes" ThisKey="ID_Structure" OtherKey="ID_Structure" Type="Employes" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Synthese_evaluations_a_chaud" Member="Synthese_evaluations_a_chaud">
+    <Type Name="Synthese_evaluations_a_chaud">
+      <Column Name="ID_Eval_syn" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Total_Rep_Ind" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Taux_M_G" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Synthese" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Synthese_evaluations_a_chaud_Evaluations_a_chaud" Member="Evaluations_a_chaud" ThisKey="ID_Eval_syn" OtherKey="ID_Eval_syn" Type="Evaluations_a_chaud" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Type_User" Member="Type_User">
+    <Type Name="Type_User">
+      <Column Name="ID_Type" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Intitule_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Type_User_Utilisateurs" Member="Utilisateurs" ThisKey="ID_Type" OtherKey="ID_Type" Type="Utilisateurs" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BesoinsEnFormation" Member="BesoinsEnFormation">
+    <Type Name="BesoinsEnFormation">
+      <Column Name="[DocN°]" Member="DocN_" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EtablieLe" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ChefDep" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateAuPlusTard" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

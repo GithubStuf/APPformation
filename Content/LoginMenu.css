@@ -1,0 +1,39 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+a {
+    color: #ff7013;
+    text-decoration: none;
+}
+.hidden-button {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 3s ease-in-out, visibility 2s ease-in-out;
+}
+.hamburger-menu-button {
+    width: 40px;
+    height: 40px;
+    background: #0d024d;
+    border: 5px solid white;
+    box-sizing: content-box;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    margin-right: 10px;
+    box-shadow: 0 0 10px 0 rgb(237, 27, 36), 0 5px 5px 0 rgb(237, 27, 36) !important;
+}
+.consult, .evals {
+    width: 200px;
+    height: 40px;
+    background: #0d024d;
+    border: 5px solid white;
+    box-sizing: content-box;
+    border-radius: 5%;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+}

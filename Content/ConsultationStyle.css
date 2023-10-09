@@ -1,0 +1,66 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .container table {
+        height: 90vh;
+        max-height: 100%;
+        text-align: center;
+    }
+
+        .container table td .gv {
+            height: fit-content;
+            max-height: 100%;
+        }
+
+        .container table .gvTD {
+            overflow-y: scroll;
+            display: flex;
+            align-items: start;
+            box-shadow: 0 0 10px 0 #ff0000;
+        }
+
+.titre, .Lprenom, .Lnom, .consigne {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.participants {
+    position: absolute;
+    top: 1%;
+    left: 0;
+    width: 20%;
+    height: 30vh;
+}
+
+.Tprenom, .Tnom {
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    background-color: #bfbbbb;
+}
+
+.btnC {
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
+    background-color: darkblue;
+    color: white;
+    box-shadow: 0 0 10px 0 #ff0000;
+}

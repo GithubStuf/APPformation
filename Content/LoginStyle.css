@@ -1,0 +1,93 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.pseu, .pass {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.custom-button {
+}
+:root {
+    --first-color: #e7eaf6;
+    --second-color: #a2a8d3;
+    --third-color: #38598b;
+    --fourth-color: #0e024c;
+    --input-bgcolor: #f2f2f2;
+}
+
+.login-page {
+    width: 400px;
+    padding: 10% 0 0;
+    margin: auto;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 400px;
+    margin: 0 auto 100px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+    .form .pseudo, .form .password {
+        outline: 0;
+        background: var(--input-bgcolor);
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .form .custom-button {
+        text-transform: uppercase;
+        outline: 0;
+        background: var(--fourth-color);
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 1rem;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 0 20px 0 rgb(237, 27, 36), 0 5px 5px 0 rgb(237, 27, 36);
+    }
+
+        .form .custom-button:hover, .form .custom-button:active, .form .custom-button:focus {
+            background: var(--third-color);
+        }
+
+.custom-button[disabled] {
+    background-color: gray;
+    color: white;
+    cursor: not-allowed;
+    box-shadow: 0 0 0 0;
+}
+
+    .custom-button[disabled]:hover {
+        background-color: gray;
+        color: white;
+        cursor: not-allowed;
+        box-shadow: 0 0 0 0;
+    }

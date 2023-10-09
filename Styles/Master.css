@@ -1,0 +1,43 @@
+﻿
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color:white;
+}
+
+nav {
+    background-color: #333;
+    text-align: center;
+}
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    nav li {
+        margin: 0 1rem;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+nav a:hover {
+    color: lightgray;
+}
+
+    nav .logo {
+        margin-right: auto;
+    }
+
+        nav .logo:hover {
+            color: lightgray;
+            cursor: pointer;
+        }
+

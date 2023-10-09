@@ -1,0 +1,209 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PageMaitreAdmin.master.cs" Inherits="Login_Eniem.PageMaitreAdmin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+         @media screen and (width: 600px){
+              nav {
+                    height: 5vh;
+                    margin-bottom:0.5%;
+              }
+        }
+        nav {
+            background-color: #c70039;
+            text-align: center;
+            height: 100%;
+            align-content: center;
+            border-bottom: 1px solid #1a0296;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            
+            background-color: #141e46;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        ul .dropdown {
+            float: right;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            font-weight: bolder;
+            font-size: 20px;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        li a.active {
+            color: white;
+            background-color: #04AA6D;
+        }
+
+        nav .logo {
+            width: 10%;
+            aspect-ratio: 3/1;
+            position: absolute;
+            left: 1%;
+            top: 1%;
+        }
+
+        li a, .dropbtn {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        li a:hover, .dropdown:hover .dropbtn {
+            color:white;
+            background-color: #0d014af2;
+        }
+
+        li.dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+        .dropdown{
+            position: absolute;
+            top: 0;
+            right: 20px;
+        }
+
+        .dropdown-content .a{
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border:none;
+        }
+
+
+        .dropdown-content .a:hover{
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .profil{
+          position:absolute;
+          top:10px;
+          right:-15px;
+          color:white;
+          background-color:white;
+          mix-blend-mode:color-dodge;
+        }
+         
+    </style>
+    <style type="text/css">
+        .layout {
+          width: 100vw;
+          height: 100vh;
+
+          display: grid;
+          grid:
+            "header" 10%
+            "main" 90%
+            "." auto
+            / 1fr;
+        }
+
+        .header { grid-area: header; }
+        .main { grid-area: main;}
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+       <%-- <div>
+            <nav>
+                <ul runat="server">
+                    <li><asp:Image ID="Image1" CssClass="logo" runat="server" ImageUrl="~/Images/Logo_Eniem 2.0.png" /></li>
+                    <li runat="server"><a runat="server" href="~/Pages/Users.aspx">Consultaion des Utilisateurs</a></li>
+                    <li runat="server" ><a runat="server" href="~/Pages/Employees.aspx">Consultaion des Employées</a></li>
+                    <li>
+                        <asp:Label runat="server" ID="infos" CssClass="info" Font-Bold="True" Font-Names="Times New Roman"
+                            Font-Size="18pt" Style="color: white; margin-left: auto; margin-right: 1rem; position: absolute; right: 0; top: 10px;">
+                        </asp:Label>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Khouas Amine</a>
+                        <div class="dropdown-content">
+                            <asp:HyperLink ID="HyperLink1" CssClass="a" runat="server">Profil</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink2" CssClass="a"  runat="server" NavigateUrl="~/Pages/Login.aspx">LogOut</asp:HyperLink>
+                        </div>
+                        <asp:Image ID="Image2" CssClass="profil" runat="server" ImageUrl="~/Images/profil-de-lutilisateur.png" Width="30" Height="30" />
+                    </li>
+                </ul>
+                
+            </nav>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>--%>
+        <section class="layout">
+            <div class="header">
+                <nav>
+                    <ul runat="server">
+                        <li>
+                            <asp:Image ID="Image1" CssClass="logo" runat="server" ImageUrl="~/Images/Logo_Eniem 2.0.png" /></li>
+                        <li runat="server"><a runat="server" href="~/Pages/Users.aspx">Gestion Utilisateurs</a></li>
+                        <li runat="server"><a runat="server" href="~/Pages/Employees.aspx">Gestion Employés</a></li>
+                        <li>
+                            <asp:Label runat="server" ID="infos" CssClass="info" Font-Bold="True" Font-Names="Times New Roman"
+                                Font-Size="18pt" Style="color: white; margin-left: auto; margin-right: 1rem; position: absolute; right: 0; top: 10px;">
+                            </asp:Label>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn">Khouas Amine</a>
+                            <div class="dropdown-content">
+                                <asp:HyperLink ID="HyperLink1" CssClass="a" runat="server">Profil</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink2" CssClass="a" runat="server" NavigateUrl="~/Pages/Login.aspx">LogOut</asp:HyperLink>
+                            </div>
+                            <asp:Image ID="Image2" CssClass="profil" runat="server" ImageUrl="~/Images/user.png" Width="30" Height="30"/>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="main">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </section>
+    </form>
+</body>
+</html>

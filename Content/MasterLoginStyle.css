@@ -1,0 +1,18 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+.hidden-button {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 13s ease-in-out, visibility 12s ease-in-out;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif background-color: var(--first-color);
+    color: #444444;
+}
+
+
+a {
+    color: #ff7013;
+    text-decoration: none;
+}
+
